@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-    // Change to your "entry-point".
+    
     entry: './src/index',
     output: {
         path: path.resolve(__dirname, 'public/dist'),
