@@ -14,7 +14,6 @@ export const getModel = ( deviceModel:any, id:any ) => {
 }
 
 
-
 export const putData = ( id:any, name:any, note:any ) => {
   Axios.put(`https://7rheg02jaa.execute-api.ap-southeast-2.amazonaws.com/dev/devices/${id}`, {
     name,
