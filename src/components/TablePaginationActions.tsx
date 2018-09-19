@@ -4,7 +4,7 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
-
+import { lastPage , disabledProp } from './functions/Functions';
 
 
 export default class TablePaginationActions extends React.Component<any,any> {
@@ -24,7 +24,7 @@ export default class TablePaginationActions extends React.Component<any,any> {
     public handleLastPageButtonClick = (event:any) => {
       this.props.onChangePage(
         event,
-        Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1),
+        lastPage( this.props.count, this.props.rowsPerPage )  
       );
     };
   
@@ -49,14 +49,14 @@ export default class TablePaginationActions extends React.Component<any,any> {
           </IconButton>
           <IconButton
             onClick={this.handleNextButtonClick}
-            disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+            disabled= { disabledProp (page, count, rowsPerPage) }
             aria-label="Next Page"
           >
             {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
           </IconButton>
           <IconButton
             onClick={this.handleLastPageButtonClick}
-            disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+            disabled= { disabledProp (page, count, rowsPerPage) }
             aria-label="Last Page"
           >
             {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}

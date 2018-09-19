@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import {HashRouter as Router} from 'react-router-dom';
 import InnerTable from './InnerTable';
 import TablePaginationActions from './TablePaginationActions';
+import { emptyRows } from './functions/Functions';
 
 
 const actionsStyles = (theme:any) => ({
@@ -37,13 +38,14 @@ class CustomPaginationActionsTable extends React.Component<any,any> {
   public render() {
    
     const { rowsPerPage, page } = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, this.props.item.length - page * rowsPerPage);
-
+   
     return (
         <Router>
 
-          <InnerTable item={this.props.item} emptyRows={emptyRows} page={page} rowsPerPage={rowsPerPage} 
-          TablePaginationActionsWrapped={TablePaginationActionsWrapped} handleChangePage={this.handleChangePage} 
+          <InnerTable item={this.props.item} emptyRows= { emptyRows(rowsPerPage, this.props.item.length, page) } 
+          page={page} rowsPerPage={rowsPerPage} 
+          TablePaginationActionsWrapped={TablePaginationActionsWrapped} 
+          handleChangePage={this.handleChangePage} 
           handleChangeRowsPerPage={this.handleChangeRowsPerPage} />
 
         </Router>

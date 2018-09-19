@@ -24,7 +24,8 @@ export default class Devices extends React.Component<any,any>{
   public componentDidMount(){
 
     document.title = "Devices List";
-    Axios.get('https://7rheg02jaa.execute-api.ap-southeast-2.amazonaws.com/dev/devices').then((response) => {
+    Axios.get('https://7rheg02jaa.execute-api.ap-southeast-2.amazonaws.com/dev/devices')
+    .then((response) => {
 
     this.setState({
         devices: response.data.member 

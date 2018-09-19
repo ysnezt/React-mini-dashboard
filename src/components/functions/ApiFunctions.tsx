@@ -1,4 +1,3 @@
-
 import Axios from 'axios';
 
 // Fetch Device Model From API
@@ -26,5 +25,4 @@ export const putData = ( id:any, name:any, note:any ) => {
     global.console.log(error);
   });
 }
-
 

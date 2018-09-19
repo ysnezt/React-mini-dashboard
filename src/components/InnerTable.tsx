@@ -8,7 +8,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
-import { getModel } from './ApiFunctions';
+import { getModel } from './functions/ApiFunctions';
 
 const InnerTable = (props:any) => {
 
