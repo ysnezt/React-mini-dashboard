@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import {HashRouter as Router} from 'react-router-dom';
 import InnerTable from './InnerTable';
 import TablePaginationActions from './TablePaginationActions';
-import { emptyRows } from './functions/Functions';
+import { emptyRows } from './functions/innerFunctions';
 
 
 const actionsStyles = (theme:any) => ({

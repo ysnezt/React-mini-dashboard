@@ -1,7 +1,7 @@
 
 import * as Yup from 'yup';
 import { withFormik } from 'formik';
-import { putData } from './functions/ApiFunctions';
+import { putData } from './functions/apiFunctions';
 import  InnerForm  from './InnerForm';
 
  // Shape of form values

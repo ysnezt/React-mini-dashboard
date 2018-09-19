@@ -1,12 +1,22 @@
 
-import { getModel } from '../components/functions/ApiFunctions';
+import { emptyRows , lastPage , disabledProp } from '../components/functions/innerFunctions';
 
-test('get device model', () => {
+test('emptyRows works', () => {
 
-    const add = "/devicemodels/id1";
-    const id = "/devices/id3";
+    expect( emptyRows (2,2,1) ).toBe(2);
 
-    expect( getModel(add,id) ).toMatch('PTD2');
+});
+
+test('lastPage works', () => {
+
+    expect( lastPage (6, 4) ).toBe(1);
+
+});
+
+test('disabledProp works', () => {
+
+    expect( disabledProp (2, 6, 4) ).toBeTruthy();
+    expect( disabledProp (2, 6, 1) ).not.toBeTruthy();
 
 });
 
