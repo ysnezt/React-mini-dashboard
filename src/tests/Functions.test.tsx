@@ -1,5 +1,5 @@
 
-import { getModel } from '../components/Functions';
+import { getModel } from '../components/ApiFunctions';
 
 test('get device model', () => {
 
